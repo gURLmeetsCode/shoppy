@@ -2,28 +2,24 @@ import React, {Component, Fragment} from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 import Spinner from 'react-bootstrap/Spinner'
-import ShowItem from './ShowItem'
+import SingleItemView from './SingleItemView'
 
-const SHOWS_QUERY = gql `
-query ShowsQuery{
+const ITEMS_QUERY = gql `
+query ItemsQuery{
   shows {
     name
-    premiered
-    summary
-    officialSite
-    status
-    type
+    category
   }
 }
 `;
 
 
-export class Shows extends Component{
+export class Items extends Component{
   render(){
     return (
       <Fragment>
-        <h1 className="display-4 my-3">Shows</h1>
-        <Query query={SHOWS_QUERY}>
+        <h1 className="display-4 my-3">Shopping List</h1>
+        <Query query={ITEMS_QUERY}>
         {
           ({ loading, error, data}) => {
             if(loading) return <Spinner animation="grow" variant="info" />
@@ -31,7 +27,7 @@ export class Shows extends Component{
             return <Fragment>
               {
                 data.shows.map(show => (
-                  <ShowItem key={show.premiered} show={show}/>
+                  <SingleItemView key={show.premiered} show={show}/>
                 ))
               }
             </Fragment>
@@ -44,4 +40,4 @@ export class Shows extends Component{
 }
 
 
-export default Shows
+export default Items

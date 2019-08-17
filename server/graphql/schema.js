@@ -8,15 +8,11 @@ const {
 } = require('graphql')
 const axios = require('axios')
 
-const ShowType = new GraphQLObjectType({
-  name: "Show",
+const ShoppingListType = new GraphQLObjectType({
+  name: "Item",
   fields:() => ({
     name: { type: GraphQLString},
-    premiered: {type: GraphQLString},
-    summary: {type: GraphQLString},
-    officialSite: {type: GraphQLString},
-    status: {type: GraphQLString},
-    type: {type: GraphQLString}
+    category: {type: GraphQLString}
   })
 })
 
@@ -26,10 +22,10 @@ const ShowType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-    shows: {
-      type: new GraphQLList(ShowType),
+    items: {
+      type: new GraphQLList(ShoppingListType),
       resolve(parentVal, args){
-        return axios.get('http://api.tvmaze.com/shows')
+        return axios.get('#')
           .then(res => res.data)
       }
     }

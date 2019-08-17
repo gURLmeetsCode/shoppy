@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
-import Shows from './Shows'
+import Items from './Items'
 
 
 import ApolloClient from "apollo-boost"
 import {ApolloProvider} from "react-apollo"
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'http://localhost:1337/graphql'
 })
 
 export default class App extends React.Component {
@@ -15,9 +15,9 @@ export default class App extends React.Component {
       <ApolloProvider client={client}>
         <div className="container">
             <div className="main-logo">
-              <h2 className="main-logo-title"><img className="main-icon" src="/assets/tvicon.png" alt="tv"/> ShowLIST</h2>
+              <h2 className="main-logo-title"><img className="main-icon" src="#" alt="tv"/>Shoppy</h2>
             </div>
-          <Shows />
+          <Items />
         </div>
       </ApolloProvider>
     )

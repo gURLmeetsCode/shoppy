@@ -1,6 +1,6 @@
-# Tv Show Organizer
+# Shopping List Expert
 
-Simple application that uses GraphQL with 3rd party API on the backend and React and Apollo on the frontend.
+Simple application that uses MERN stack in addition to GraphQL and Cron jobs for database syncing.
 
 
 ## Getting Started
@@ -27,8 +27,8 @@ npm run start-dev
 * For additional scripts, refer to the package.json.
 
 
-Check localhost:4000 for running application.
-Check localhost:4000/graphql for running Graphiql IDE.
+Check localhost:1337 for running application.
+Check localhost:1337/graphql for running Graphiql IDE.
 
 
 ## Running the tests
@@ -56,5 +56,3 @@ Give an example
 [Natasha Kelly]("github.com/gURLmeetsCode")
 
 
-##Future Goals
-I want to work on extending the project to use a SQL Database instead of an 3rd party API.
